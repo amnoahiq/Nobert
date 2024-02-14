@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revolutionary ALerts</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #c73939;
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    position: relative;
+    min-height: 100vh;
+  }
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff4d6d; /* Red background */
+    color: #ffffff; /* White text color */
+    padding: 20px;
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 4s ease-in-out; /* Smooth transition */
+  }
+  .container.show {
+    opacity: 1; /* Show when the show class is applied */
+  }
+  h1, p {
+    opacity: 0;
+    animation: fadeIn 5s forwards;
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .image-container {
+    margin-bottom: 30px;
+  }
+  .image-container img {
+    width: 100%;
+    max-width: 500px; /* Set maximum width for better scaling on larger screens */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  #message {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  .footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff; /* White background */
+    color: #ff4d6d; /* Red text color */
+    width: 100%;
+  }
+  .show-button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .show-button {
+    background-color: #f1eaea;
+    color: #b40825;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .show-button:hover {
+    background-color: #ff4d6d;
+    color: #ffffff;
+  }
+  .additional-image {
+    width: 100%;
+    opacity: 100px; /* Initially hidden */
+    max-width: 100px;
+    transition: opacity 3s ease-in-out; /* Smooth transition */
+  }
+</style>
+</head>
+<body>
+<div class="container" id="content">
+  <h1>Happy Valentine's Day Busitema !</h1>
+  <p>Wishing you all a day filled with love, joy, and happiness!</p>
+  <div class="image-container">
+    <img style="border-radius: 100%;" src="b.jpg" alt="Politician 1">
+  </div>
+  <div id="message">
+    <p>OGENRWOT NOBERT ANDREW<br> Revolutionary Government</p>
+  </div>
+  <div class="footer">
+    <p>&copy; Ogenwrot Nobert andrew  2024-2025            |             Created by @åm_Nøåh</p>
+  </div>
+</div>
+
+<div class="show-button-container">
+  <button id="showButton" class="show-button" onclick="showContent()">
+    Click And We Go Revolutionary 
+  </button>
+  <img class="additional-image" src="n.jpg" alt="Additional Image">
+</div>
+
+<script>
+  function showContent() {
+    var content = document.getElementById("content");
+    var button = document.getElementById("showButton");
+    var additionalImage = document.querySelector(".additional-image");
+    content.classList.add("show");
+    button.style.display = "none"; // Hide the button after it's clicked
+    additionalImage.style.opacity = "0"; // Show the additional image
+    // Automatically remove the "show" class after 5 seconds
+    setTimeout(function() {
+      content.classList.remove("show");
+      button.style.display = "block"; // Show the button after content disappears
+      additionalImage.style.opacity = "1"; // Hide the additional image
+    }, 8000); // 5000 milliseconds = 5 seconds
+  }
+</script>
+
+</body>
+</html>
